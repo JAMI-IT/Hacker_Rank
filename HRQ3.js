@@ -1,19 +1,28 @@
-var matrixExample = [
-    [ 1, 2, 3, 4 ],
-    [ 4, 5, 6, 5 ],
-    [ 7, 8, 9, 7 ],
-    [ 7, 8, 9, 7 ]
-  ];
- 
- function sumUpDiagonals(matrix) {
-   var sumDiagonals = {main: 0, second: 0},
-     matrixLength = matrix.length;
- 
-   for (var i = 0; i < matrixLength; i++) {
-     sumDiagonals.main += matrix[i][i];
-     sumDiagonals.second += matrix[i][matrixLength-i-1];
-   }
-   return (sumDiagonals.main-sumDiagonals.second)
- }
- 
- console.log(sumUpDiagonals(matrixExample))
+const arr = [
+    [1, 3, 4, 2],
+    [4, 5, 33, 5],
+    [5, 2, 26, 4],
+    [8, 2, 9, 3]
+ ];
+ const diagonalProduct = arr => {
+    let fsum = 0;
+    let ssum=0;
+    let max=arr.length;
+    for(let i = 0; i < arr.length; i++){
+       for(let j = 0; j < arr[i].length; j++){
+          if(i === j){
+             fsum += arr[i][j];
+            ssum +=arr[i][max-j-1];
+          };
+       };
+    };
+    let total=fsum-ssum;
+    if(total<0)
+    {
+        total=total*-1;
+    }
+
+    return (total);
+ };
+
+ console.log(diagonalProduct(arr));
