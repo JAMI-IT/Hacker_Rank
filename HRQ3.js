@@ -24,5 +24,4 @@ const arr = [
 
     return (total);
  };
-
  console.log(diagonalProduct(arr));
