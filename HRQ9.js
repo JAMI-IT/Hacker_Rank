@@ -23,8 +23,6 @@ function gradingStudents(grades) {
         }        
     }
 return grades
-
 }
-
 var grades=[73,67,38,33]
 console.log(gradingStudents(grades));
