@@ -1,40 +1,34 @@
-function migratoryBirds(arrr) {
+function migratoryBirds(arr) {
     // Write your code here
-    
-    var Type1=0;
-    var Type2=0;
-    var Type3=0;
-    var Type4=0;
-    var Type5=0;
-    for (let i = 0; i < arrr.length; i++) {
-        if(arrr[i]==1)
-        {
-            Type1=Type1+1;
+    var m=0;
+    var Type=[0,0,0,0,0]
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i]==1){
+            Type[0]=Type[0]+1;
         }
-        else if(arrr[i]==2)
-        {
-            Type2=Type2+1;
-        } 
-        else if(arrr[i]==3)
-        {
-            Type3=Type3+1;
-        } 
-        else if(arrr[i]==4)
-        {
-            Type4=Type4+1;
-        } 
-        else if(arrr[i]==5)
-        {
-            Type5=Type5+5;
+        else if(arr[i]==2){
+            Type[1]=Type[1]+1;
+        }
+        else if(arr[i]==3){
+            Type[2]=Type[2]+1;
+        }
+        else if(arr[i]==4){
+            Type[3]=Type[3]+1;
+        }
+        else if(arr[i]==5){
+            Type[4]=Type[4]+1;
         }
     }
-    for (let x = 1; x <= 5; x++) {
-       
+    for (let y = 0; y < Type.length; y++) {
+        if (Type[y]>m) {
+            m=Type[y];
+        }        
     }
-
-console.log(Type2);
+    let t;
+    t=Type.indexOf(m);
+    return t+1
 }
 
-let arrrr=[1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]
+let arr=[1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]
 
-migratoryBirds(arrrr)
+console.log(migratoryBirds(arr));

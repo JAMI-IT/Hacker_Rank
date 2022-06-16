@@ -24,9 +24,9 @@ function migratoryBirds(arr) {
             m=Type[y];
         }        
     }
-    let in;
-    in=Type.indexOf(m);
-    return 
+    let t;
+    t=Type.indexOf(m);
+    return t+1
 }
 
 let arr=[1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]
