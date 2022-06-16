@@ -1,28 +1,30 @@
 function gradingStudents(grades) {
     // Write your code here
-    
-    for (let i = 40; i < 100; i=i+5) {
-        for (let x = 0; x < grades.length; x++) {
-           if (grades[x]<38) {
-            grades[x]=grades[x];
-           }
-           else
-           {
-            if (grades[x]<=i) {
-                let gr=i-grades[x]
-                if (gr>=3) {
-                    grades[x]=grades[x];
-                    
+    for (let i = 0; i <=60; i++) {
+
+        if (grades[i]<38) {
+            grades[i]=grades[i];
+        }
+        else{
+        for (let x = 0; x <=100; x=x+5) {
+            if(grades[i]<=x)
+            {
+                let gr;
+                gr=x-grades[i];
+                if (gr>=3) {                    
+                 grades[i]=grades[i];
                 }
-                else
-                {
-                    grades[x]=grades[x]+gr;
-                }
+                else{
+                grades[i]=gr+grades[i];
+            
             }
-           }
-        }        
+            break;
+            }
+            
+        }
     }
-return grades
+}
+return grades;
 }
 var grades=[73,67,38,33]
 console.log(gradingStudents(grades));
