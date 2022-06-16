@@ -1,30 +1,34 @@
-function gradingStudents(grades) {
+function migratoryBirds(arr) {
     // Write your code here
-    var it=40;
-for (let i = 0; i < grades.length; i++) {
-    if (grades[i]<38) {
-        grades[i]=grades[i]
-    }
-    else
-    { 
-        if (grades[i]<it) {
-            let gr=0;
-            gr=it-grades[i];
-         if (gr>=3) {
-            
-                grades[i]=grades[i]+gr;                   
-            }
-        else
-            {
-            grades[i]=grades[i]+gr;   
-            }
+    var m=0;
+    var Type=[0,0,0,0,0]
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i]==1){
+            Type[0]=Type[0]+1;
+        }
+        else if(arr[i]==2){
+            Type[1]=Type[1]+1;
+        }
+        else if(arr[i]==3){
+            Type[2]=Type[2]+1;
+        }
+        else if(arr[i]==4){
+            Type[3]=Type[3]+1;
+        }
+        else if(arr[i]==5){
+            Type[4]=Type[4]+1;
         }
     }
+    for (let y = 0; y < Type.length; y++) {
+        if (Type[y]>m) {
+            m=Type[y];
+        }        
+    }
+    let in;
+    in=Type.indexOf(m);
+    return 
 }
-return grades
-}
-var grades=[73,67,38,33]
-console.log(grades);
-grades=grades.sort();
-console.log(grades);
-console.log(gradingStudents(grades));
+
+let arr=[1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]
+
+console.log(migratoryBirds(arr));
