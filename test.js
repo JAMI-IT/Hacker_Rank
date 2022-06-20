@@ -1,7 +1,12 @@
-var ar=["jami","rehman","Abdul"]
-proces_array(ar)
-function proces_array(params){
-    for (let i = 0; i < params.length; i++) {
-            console.log(params[i]);        
-    }
+let str= "jami";
+let arr=[]
+for (let i = 0; i < str.length; i++) {
+       var asci=str.charCodeAt(i)
+       asci=asci-97;
+       arr.push(asci)
 }
+console.log("Length Of the string ::");
+console.log(str.length+1);
+
+console.log("Ascci Code array");
+console.log(arr);
