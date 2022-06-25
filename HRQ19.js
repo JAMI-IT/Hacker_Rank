@@ -1,25 +1,25 @@
 function utopianTree(n) {
     // Write your code here
-    let no=1;
-    let sum=0;
-for (let i = 0; i < n.length; i++) {
-    if (no==1) {
-        if (sum==0) {
-            sum=1;
-            no=0;
+    var sum=0;
+    var sum2=0;
+    var arr=0;
+    if (n%2==0) {
+        sum=n-1;
+        sum=sum*2+1;
+        if (sum<0) {
+            sum=-sum;
         }
-       else{
-            sum=n[i]*2
-       }
+        arr=sum
     }
     else{
-        console.log("SD");
-        sum=sum+1
-        no=1;
+        sum2=sum*2;
+        arr=sum2;
     }
-}
-console.log(sum);
+return (arr);
 }
 
-let n=[0,1,4]
-utopianTree(n);
+let n=[0,1,2,3,4,5]
+for (let i = 0; i < n.length; i++) {
+    
+    console.log(utopianTree(n[i]));
+}
