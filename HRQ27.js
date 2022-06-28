@@ -1,42 +1,24 @@
-function minimumNumber(password) {
-    // Return the minimum number of characters to make the password strong
-    let n=0;
-    let no=4
-    let special_characters = "!@#$%^&*()-+"
-    let length =password.length;
-    if (length <6) {
-        return (6-length) 
+
+function minimumDistances(a) {
+    // Write your code here
+    let ind;
+    let b=[]
+    for (let i = 0; i < a.length; i++) {
+           for (let j = i+1; j < a.length; j++) {
+                  if(a[i]==a[j]){
+                        ind=a.lastIndexOf(a[j])-a.indexOf(a[i])
+                        b.push(ind);                           
+                  }
+           }              
+    }
+    let m=Math.min.apply(null,b)
+    if (m==Infinity) {
+           return -1
     }
     else{
-       for (let i = 0; i < password.length; i++) {
-            if (password[i]===password[i].toUpperCase()) {
-                n=n+1;
-                if(n==1)
-                {
-                    no=no-1
-                }
-            }   
-            if (password[i]===password[i].toLowerCase()) {
-                n=n+1;
-                if(n==2)
-                {
-                    no=no-1
-                }
-            }  
-            for (let j = 0; j < special_characters.length; j++) {
-                    if (password[i]==special_characters[j]) {
-                        no=no-1;
-                        break ;
-                    }       
-            }  
-            for (let j = 0; j < numb.length; j++) {
-                            
-            }
-       }
+           return m
     }
-    console.log(no);
 }
+let a = [1 ,2 ,3 ,4 ,10]
 
-let password="#HackerRank"
-
-console.log(minimumNumber(password));
+console.log(minimumDistances(a));  
